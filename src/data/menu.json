@@ -1,0 +1,55 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Classic Beef Burger",
+      "description": "Savor the rich flavors of our classic beef burger featuring a perfectly seasoned juicy beef patty layered with crisp lettuce, ripe tomato slices, tangy pickles, and drizzled with our special house sauce, all sandwiched between a lightly toasted sesame seed bun.",
+      "category": "burgers",
+      "price": 7.99,
+      "calories": 600,
+      "ingredients": [
+        "beef patty",
+        "lettuce",
+        "tomato",
+        "pickles",
+        "special sauce",
+        "sesame seed bun"
+      ],
+      "image_url": "https://example.com/classic_beef_burger.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Chicken Avocado Burger",
+      "description": "Experience a burst of flavors with our chicken avocado burger. Grilled chicken breast meets the creamy goodness of fresh avocado, crispy bacon, and crisp lettuce, all complemented by a zesty aioli, served on a wholesome whole grain bun.",
+      "category": "burgers",
+      "price": 8.99,
+      "calories": 550,
+      "ingredients": [
+        "grilled chicken breast",
+        "avocado",
+        "bacon",
+        "lettuce",
+        "aioli",
+        "whole grain bun"
+      ],
+      "image_url": "https://example.com/chicken_avocado_burger.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Veggie Supreme Burger",
+      "description": "Indulge in a flavorful experience with our Veggie Supreme Burger. A mouthwatering vegetarian patty is paired with a medley of roasted vegetables, creamy hummus, fresh spinach, and savory feta cheese, all nestled on a wholesome multigrain bun.",
+      "category": "burgers",
+      "price": 6.99,
+      "calories": 450,
+      "ingredients": [
+        "vegetarian patty",
+        "roasted vegetables",
+        "hummus",
+        "spinach",
+        "feta cheese",
+        "multigrain bun"
+      ],
+      "image_url": "https://example.com/veggie_supreme_burger.jpg"
+    }
+  ]
+}
