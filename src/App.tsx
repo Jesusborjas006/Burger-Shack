@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
+import MenuItems from "./components/MenuItems";
 
 const url = "http://localhost:9000";
 
 function App() {
-  const [menu, setMenu] = useState([]);
-  console.log(menu);
+  const [menuItems, setMenuItems] = useState([]);
+  console.log(menuItems);
 
   useEffect(() => {
     const fetchMenu = async () => {
       const response = await fetch(`${url}/menu`);
       const data = await response.json();
-      setMenu(data);
+      setMenuItems(data);
     };
     fetchMenu();
   }, []);
 
   return (
-    <>
+    <div>
       <h1>Burger Shack</h1>
-    </>
+      <MenuItems menuItems={menuItems} />
+    </div>
   );
 }
 
