@@ -8,10 +8,11 @@ type MenuItemsProp = {
 const MenuItems = ({ menuItems }: MenuItemsProp) => {
   return (
     <main>
-      <h1>Menu</h1>
-      {menuItems.map((item) => (
-        <MenuItem key={item.id} menuItem={item} />
-      ))}
+      <div className="grid grid-cols-3 gap-x-6">
+        {menuItems.map((item) => (
+          <MenuItem key={item.id} menuItem={item} />
+        ))}
+      </div>
     </main>
   );
 };

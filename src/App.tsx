@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="max-w-[1640px] mx-auto p-6">
       <h1>Burger Shack</h1>
       <MenuItems menuItems={menuItems} />
     </div>
