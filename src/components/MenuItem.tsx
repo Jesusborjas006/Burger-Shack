@@ -5,16 +5,23 @@ type MenuItemProps = {
 };
 
 const MenuItem = ({ menuItem }: MenuItemProps) => {
+  const descriptionLength = menuItem.description;
+  console.log(descriptionLength.length);
+
   return (
-    <div className="border rounded-3xl">
+    <div className="border rounded-3xl shadow-lg hover:scale-105 duration-300">
       <img
-        className=" rounded-t-3xl"
+        className="w-full h-[240px] object-cover rounded-t-3xl"
         src={menuItem.image_url}
         alt={menuItem.name}
       />
       <div className="px-3 py-5">
         <h3 className=" text-2xl font-bold mb-1">{menuItem.name}</h3>
-        <p className="text-gray-600 mb-2">{menuItem.description}</p>
+        <p className="text-gray-600 mb-2">
+          {descriptionLength.length >= 105
+            ? descriptionLength.slice(0, 100) + "..."
+            : descriptionLength}
+        </p>
 
         <p className="text-gray-600">
           ${menuItem.price} | {menuItem.calories} cals

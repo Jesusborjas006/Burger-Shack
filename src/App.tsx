@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import MenuItems from "./components/MenuItems";
-import MenuItem from "./components/MenuItem";
 import { MenuItemType } from "./types";
+import Menu from "./components/Menu";
 
 const url = "http://localhost:9000";
 
 function App() {
   const [menuItems, setMenuItems] = useState<MenuItemType[] | []>([]);
-  console.log(menuItems);
 
   useEffect(() => {
     const fetchMenu = async () => {
@@ -20,14 +18,13 @@ function App() {
 
   return (
     <div className="max-w-[1640px] mx-auto p-6">
-      <h1>Burger Shack</h1>
-      <MenuItems>
-        {menuItems.map((item) => (
-          <MenuItem key={item.id} menuItem={item} />
-        ))}
-      </MenuItems>
+      <Menu menuItems={menuItems} />
     </div>
   );
 }
 
 export default App;
+
+// {menuItems.map((item) => (
+//   <MenuItem key={item.id} menuItem={item} />
+// ))}
