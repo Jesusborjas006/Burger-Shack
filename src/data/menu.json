@@ -1,0 +1,106 @@
+{
+  "menu": {
+    "burgers": [
+      {
+        "id": 1,
+        "name": "Classic Beef Burger",
+        "description": "Savor the rich flavors of our classic beef burger featuring a perfectly seasoned juicy beef patty layered with crisp lettuce, ripe tomato slices, tangy pickles, and drizzled with our special house sauce, all sandwiched between a lightly toasted sesame seed bun.",
+        "price": 7.99,
+        "calories": 600,
+        "ingredients": [
+          "beef patty",
+          "lettuce",
+          "tomato",
+          "pickles",
+          "special sauce",
+          "sesame seed bun"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=3099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 2,
+        "name": "Chicken Avocado Burger",
+        "description": "Experience a burst of flavors with our chicken avocado burger. Grilled chicken breast meets the creamy goodness of fresh avocado, crispy bacon, and crisp lettuce, all complemented by a zesty aioli, served on a wholesome whole grain bun.",
+        "price": 8.99,
+        "calories": 550,
+        "ingredients": [
+          "grilled chicken breast",
+          "avocado",
+          "bacon",
+          "lettuce",
+          "aioli",
+          "whole grain bun"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=3099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+    ],
+    "chickenSandwiches": [
+      {
+        "id": 3,
+        "name": "Grilled Chicken Sandwich",
+        "description": "Simple and delicious grilled chicken sandwich with lettuce, tomato, and mayo on a soft whole wheat bun.",
+        "price": 9.99,
+        "calories": 500,
+        "ingredients": [
+          "grilled chicken breast",
+          "lettuce",
+          "tomato",
+          "mayo",
+          "whole wheat bun"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 4,
+        "name": "Spicy Buffalo Chicken Sandwich",
+        "description": "Spicy buffalo chicken sandwich with lettuce, tomato, and ranch dressing, served in a sesame seed bun.",
+        "price": 10.99,
+        "calories": 550,
+        "ingredients": [
+          "spicy buffalo chicken",
+          "lettuce",
+          "tomato",
+          "ranch dressing",
+          "sesame seed bun"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 5,
+        "name": "BBQ Chicken Bacon Ranch Sandwich",
+        "description": "Satisfy your cravings with our BBQ Chicken Bacon Ranch Sandwich. Grilled chicken, bacon, cheddar cheese, lettuce, tomato, BBQ sauce, and ranch dressing on a toasted ciabatta roll.",
+        "price": 11.99,
+        "calories": 600,
+        "ingredients": [
+          "grilled chicken",
+          "bacon",
+          "cheddar cheese",
+          "lettuce",
+          "tomato",
+          "BBQ sauce",
+          "ranch dressing",
+          "toasted ciabatta roll"
+        ],
+        "image_url": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+    ],
+    "drinks": [
+      {
+        "id": 6,
+        "name": "Refreshing Lemonade",
+        "description": "Cool off with our refreshing lemonade, made with freshly squeezed lemons and a hint of sweetness.",
+        "price": 2.49,
+        "size": "Regular",
+        "image_url": "https://www.webstaurantstore.com/images/products/large/605980/2206637.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Iced Coffee",
+        "description": "Start your day with a kick! Our iced coffee is brewed to perfection and served over ice.",
+        "price": 3.99,
+        "size": "Large",
+        "image_url": "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80&w=3114&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+    ]
+  }
+}

@@ -1,8 +1,31 @@
+import { useEffect, useState } from "react";
+import { MenuCategoryType } from "./types";
+import Menu from "./components/Menu";
+
+const url = "http://localhost:9000";
+
 function App() {
+  const [menuItems, setMenuItems] = useState<
+    MenuCategoryType | { burgers: []; chickenSandwiches: []; drinks: [] }
+  >({
+    burgers: [],
+    chickenSandwiches: [],
+    drinks: [],
+  });
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      const response = await fetch(`${url}/menu`);
+      const data = await response.json();
+      setMenuItems(data);
+    };
+    fetchMenu();
+  }, []);
+
   return (
-    <>
-      <h1>Burger Shack</h1>
-    </>
+    <div className="max-w-[1640px] mx-auto p-6">
+      <Menu menuItems={menuItems} />
+    </div>
   );
 }
 
