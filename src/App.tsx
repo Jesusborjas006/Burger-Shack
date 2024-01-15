@@ -12,7 +12,6 @@ function App() {
     chickenSandwiches: [],
     drinks: [],
   });
-  // console.log(menuItems);
 
   useEffect(() => {
     const fetchMenu = async () => {
@@ -31,7 +30,3 @@ function App() {
 }
 
 export default App;
-
-// {menuItems.map((item) => (
-//   <MenuItem key={item.id} menuItem={item} />
-// ))}
