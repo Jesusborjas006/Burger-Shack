@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { MenuCategoryType } from "./types";
 import Menu from "./components/Menu";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./components/NotFound";
 
 const url = "http://localhost:9000";
 
@@ -24,7 +26,11 @@ function App() {
 
   return (
     <div className="max-w-[1640px] mx-auto p-6">
-      <Menu menuItems={menuItems} />
+      <Routes>
+        <Route path="/" element={<Menu menuItems={menuItems} />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
