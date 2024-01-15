@@ -8,7 +8,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
   return (
     <div className="border rounded-3xl shadow-lg hover:scale-105 duration-300">
       <img
-        className="w-full h-[240px] object-cover rounded-t-3xl"
+        className="w-full h-[260px] object-cover rounded-t-3xl"
         src={item.image_url}
         alt={item.name}
       />
