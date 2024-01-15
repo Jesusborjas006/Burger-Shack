@@ -29,7 +29,10 @@ function App() {
     <div className="max-w-[1640px] mx-auto p-6">
       <Routes>
         <Route path="/" element={<Menu menuItems={menuItems} />} />
-        <Route path="/details" element={<ItemDetails />} />
+        <Route
+          path="/details/:id"
+          element={<ItemDetails menuItems={menuItems} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
