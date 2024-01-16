@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <div className="max-w-[1640px] mx-auto p-6">
+    <div>
       <Routes>
         <Route path="/" element={<Menu menuItems={menuItems} />} />
         <Route

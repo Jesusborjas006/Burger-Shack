@@ -10,7 +10,7 @@ type MenuProps = {
 
 const Menu = ({ menuItems }: MenuProps) => {
   return (
-    <main className="">
+    <main className="max-w-[1640px] mx-auto p-6">
       <MenuCategory menuItems={menuItems} />
     </main>
   );

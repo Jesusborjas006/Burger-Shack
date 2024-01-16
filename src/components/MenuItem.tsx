@@ -30,7 +30,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
         <div className="flex justify-evenly mt-8">
           <Link to={`/details/${item.id}`}>
             <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full px-4 py-2">
-              Customize
+              Details
             </button>
           </Link>
           <button className="bg-orange-500 text-white font-bold rounded-full px-4 py-2">
