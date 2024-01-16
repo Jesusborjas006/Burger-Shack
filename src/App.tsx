@@ -3,7 +3,7 @@ import { MenuCategoryType } from "./types";
 import Menu from "./components/Menu";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
-import ItemDetails from "./components/ItemDetails";
+import DetailsPage from "./pages/DetailsPage";
 
 const url = "http://localhost:9000";
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/" element={<Menu menuItems={menuItems} />} />
         <Route
           path="/details/:id"
-          element={<ItemDetails menuItems={menuItems} />}
+          element={<DetailsPage menuItems={menuItems} />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
