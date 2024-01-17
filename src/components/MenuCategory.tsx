@@ -13,7 +13,7 @@ const MenuCategory = ({ menuItems }: MenuCategoryProps) => {
   return (
     <>
       {Object.entries(menuItems).map(([category, items]) => (
-        <section key={category} className="my-16">
+        <section key={category} className="my-12">
           <h2 className="text-3xl font-bold my-4">
             {category.replace(/([a-z])([A-Z])/g, "$1 $2").toUpperCase()}
           </h2>

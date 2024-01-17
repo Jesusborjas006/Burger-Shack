@@ -3,6 +3,7 @@
 
 import { MenuCategoryType } from "../types";
 import MenuCategory from "./MenuCategory";
+import Navbar from "./Navbar";
 
 type MenuProps = {
   menuItems: MenuCategoryType;
@@ -10,9 +11,12 @@ type MenuProps = {
 
 const Menu = ({ menuItems }: MenuProps) => {
   return (
-    <main className="max-w-[1640px] mx-auto p-6">
-      <MenuCategory menuItems={menuItems} />
-    </main>
+    <>
+      <Navbar />
+      <main className="max-w-[1640px] mx-auto px-8">
+        <MenuCategory menuItems={menuItems} />
+      </main>
+    </>
   );
 };
 

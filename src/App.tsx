@@ -26,16 +26,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Menu menuItems={menuItems} />} />
-        <Route
-          path="/details/:id"
-          element={<DetailsPage menuItems={menuItems} />}
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Menu menuItems={menuItems} />} />
+      <Route
+        path="/details/:id"
+        element={<DetailsPage menuItems={menuItems} />}
+      />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
