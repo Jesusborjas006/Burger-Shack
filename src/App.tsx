@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
+import CartPage from "./pages/CartPage";
 
 const url = "http://localhost:9000";
 
@@ -32,6 +33,7 @@ function App() {
         path="/details/:id"
         element={<DetailsPage menuItems={menuItems} />}
       />
+      <Route path="cart" element={<CartPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
