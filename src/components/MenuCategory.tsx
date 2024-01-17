@@ -3,9 +3,10 @@ import MenuItem from "./MenuItem";
 
 type MenuCategoryProps = {
   menuItems: MenuCategoryType;
+  handleCartItems: unknown;
 };
 
-const MenuCategory = ({ menuItems }: MenuCategoryProps) => {
+const MenuCategory = ({ menuItems, handleCartItems }: MenuCategoryProps) => {
   // Category are keys of the object
   // Items are the menu items themselves (The value of the keys)
   // [key, value]
@@ -19,7 +20,11 @@ const MenuCategory = ({ menuItems }: MenuCategoryProps) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 ">
             {items.map((item) => (
-              <MenuItem key={item.id} item={item} />
+              <MenuItem
+                key={item.id}
+                item={item}
+                handleCartItems={handleCartItems}
+              />
             ))}
           </div>
         </section>
