@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { MenuItemType } from "../types";
+import { CartItemsType, MenuItemType } from "../types";
 
 type MenuItemProps = {
   item: MenuItemType;
-  handleCartItems: unknown;
+  handleCartItems: (newItem: CartItemsType) => void;
 };
 
 const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {

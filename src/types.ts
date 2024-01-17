@@ -15,3 +15,10 @@ export type MenuCategoryType = {
   drinks: MenuItemType[];
   // Add more categories as needed
 };
+
+export type CartItemsType = {
+  id: number;
+  name: string;
+  price: number;
+  img: string;
+};

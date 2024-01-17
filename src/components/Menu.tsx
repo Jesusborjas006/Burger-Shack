@@ -1,21 +1,15 @@
-import { MenuCategoryType } from "../types";
+import { CartItemsType, MenuCategoryType } from "../types";
 import MenuCategory from "./MenuCategory";
 import Navbar from "./Navbar";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 type MenuProps = {
   menuItems: MenuCategoryType;
+  cartItems: CartItemsType[];
+  handleCartItems: (newItem: CartItemsType) => void;
 };
 
-const Menu = ({ menuItems }: MenuProps) => {
-  const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems);
-
-  const handleCartItems = (newItem) => {
-    setCartItems([...cartItems, newItem]);
-  };
-
+const Menu = ({ menuItems, cartItems, handleCartItems }: MenuProps) => {
   return (
     <>
       <Navbar>

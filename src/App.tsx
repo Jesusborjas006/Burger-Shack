@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MenuCategoryType } from "./types";
+import { CartItemsType, MenuCategoryType } from "./types";
 import Menu from "./components/Menu";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
@@ -16,6 +16,12 @@ function App() {
     chickenSandwiches: [],
     drinks: [],
   });
+  const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
+  console.log(cartItems);
+
+  const handleCartItems = (newItem: CartItemsType) => {
+    setCartItems([...cartItems, newItem]);
+  };
 
   useEffect(() => {
     const fetchMenu = async () => {
@@ -28,7 +34,16 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Menu menuItems={menuItems} />} />
+      <Route
+        path="/"
+        element={
+          <Menu
+            menuItems={menuItems}
+            cartItems={cartItems}
+            handleCartItems={handleCartItems}
+          />
+        }
+      />
       <Route
         path="/details/:id"
         element={<DetailsPage menuItems={menuItems} />}

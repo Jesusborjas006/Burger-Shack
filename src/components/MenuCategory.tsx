@@ -1,9 +1,9 @@
-import { MenuCategoryType } from "../types";
+import { CartItemsType, MenuCategoryType } from "../types";
 import MenuItem from "./MenuItem";
 
 type MenuCategoryProps = {
   menuItems: MenuCategoryType;
-  handleCartItems: unknown;
+  handleCartItems: (newItem: CartItemsType) => void;
 };
 
 const MenuCategory = ({ menuItems, handleCartItems }: MenuCategoryProps) => {
