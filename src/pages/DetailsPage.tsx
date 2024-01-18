@@ -28,7 +28,7 @@ const DetailsPage = ({ menuItems, handleCartItems }: ItemDetailsProp) => {
         <div className="w-[40%]">
           <Link
             to="/"
-            className="text-3xl bg-white absolute rounded-full w-[70px] h-[70px] flex justify-center items-center top-8 left-8 cursor-pointer"
+            className="text-3xl bg-white hover:text-white hover:bg-black duration-300 absolute rounded-full w-[70px] h-[70px] flex justify-center items-center top-8 left-8 cursor-pointer"
           >
             &larr;
           </Link>
