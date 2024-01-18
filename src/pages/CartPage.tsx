@@ -7,6 +7,13 @@ type CartPageProps = {
 };
 
 const CartPage = ({ cartItems }: CartPageProps) => {
+  const getTotalCost = (arr: CartItemsType[]) => {
+    const total = arr.reduce((acc, current) => {
+      return (acc += current.price);
+    }, 0);
+    return Number(total).toFixed(2);
+  };
+
   return (
     <section>
       <Navbar children={undefined} />
@@ -40,7 +47,7 @@ const CartPage = ({ cartItems }: CartPageProps) => {
         <div className="flex flex-col-reverse lg:flex-col mt-10 lg:mt-0 gap-10 ">
           <div className="shadow-md min-w-[300px] border flex justify-around items-center h-[70px] font-bold text-lg w-[30%] rounded-2xl">
             <h4>Subtotal:</h4>
-            <p>$0.00</p>
+            <p>${getTotalCost(cartItems)}</p>
           </div>
           <Link to="/">
             <button className="border border-orange-500 text-orange-500 font-bold rounded-full w-full p-4">
