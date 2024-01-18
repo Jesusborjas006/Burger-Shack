@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CartItemsType, MenuCategoryType } from "../types";
 import Loading from "../components/Loading";
 import DetailsImage from "../components/DetailsImage";
@@ -26,6 +26,12 @@ const DetailsPage = ({ menuItems, handleCartItems }: ItemDetailsProp) => {
     return (
       <section className="border flex h-screen">
         <div className="w-[40%]">
+          <Link
+            to="/"
+            className="text-3xl bg-white absolute rounded-full w-[70px] h-[70px] flex justify-center items-center top-8 left-8 cursor-pointer"
+          >
+            &larr;
+          </Link>
           <DetailsImage img={item.image_url} name={item.name} />
         </div>
         <div className="w-[60%] p-10 mt-14 space-y-6">
