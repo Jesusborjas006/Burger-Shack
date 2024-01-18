@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { MenuItemType } from "../types";
+import { CartItemsType, MenuItemType } from "../types";
 
 type MenuItemProps = {
   item: MenuItemType;
+  handleCartItems: (newItem: CartItemsType) => void;
 };
 
-const MenuItem = ({ item }: MenuItemProps) => {
+const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
   return (
     <div className="border rounded-3xl shadow-lg hover:scale-105 duration-300">
       <Link to={`/details/${item.id}`}>
@@ -33,7 +34,17 @@ const MenuItem = ({ item }: MenuItemProps) => {
               Details
             </button>
           </Link>
-          <button className="bg-orange-500 text-white font-bold rounded-full px-4 py-2">
+          <button
+            className="bg-orange-500 text-white font-bold rounded-full px-4 py-2"
+            onClick={() =>
+              handleCartItems({
+                id: Date.now(),
+                name: item.name,
+                price: item.price,
+                img: item.image_url,
+              })
+            }
+          >
             Add To Bag
           </button>
         </div>

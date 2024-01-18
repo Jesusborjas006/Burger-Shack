@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { MenuCategoryType } from "./types";
+import { CartItemsType, MenuCategoryType } from "./types";
 import Menu from "./components/Menu";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
+import CartPage from "./pages/CartPage";
 
 const url = "http://localhost:9000";
 
@@ -15,6 +16,11 @@ function App() {
     chickenSandwiches: [],
     drinks: [],
   });
+  const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
+
+  const handleCartItems = (newItem: CartItemsType) => {
+    setCartItems([...cartItems, newItem]);
+  };
 
   useEffect(() => {
     const fetchMenu = async () => {
@@ -26,16 +32,29 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Menu menuItems={menuItems} />} />
-        <Route
-          path="/details/:id"
-          element={<DetailsPage menuItems={menuItems} />}
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Menu
+            menuItems={menuItems}
+            cartItems={cartItems}
+            handleCartItems={handleCartItems}
+          />
+        }
+      />
+      <Route
+        path="/details/:id"
+        element={
+          <DetailsPage
+            menuItems={menuItems}
+            handleCartItems={handleCartItems}
+          />
+        }
+      />
+      <Route path="cart" element={<CartPage cartItems={cartItems} />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 

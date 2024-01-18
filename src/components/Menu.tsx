@@ -1,18 +1,26 @@
-// import { MenuItemType } from "../types";
-// import MenuSection from "./MenuSection";
-
-import { MenuCategoryType } from "../types";
+import { CartItemsType, MenuCategoryType } from "../types";
 import MenuCategory from "./MenuCategory";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 type MenuProps = {
   menuItems: MenuCategoryType;
+  cartItems: CartItemsType[];
+  handleCartItems: (newItem: CartItemsType) => void;
 };
 
-const Menu = ({ menuItems }: MenuProps) => {
+const Menu = ({ menuItems, cartItems, handleCartItems }: MenuProps) => {
   return (
-    <main className="max-w-[1640px] mx-auto p-6">
-      <MenuCategory menuItems={menuItems} />
-    </main>
+    <>
+      <Navbar>
+        <Link to="cart">
+          <p className="text-lg">Cart Items ({cartItems.length})</p>
+        </Link>
+      </Navbar>
+      <main className="max-w-[1640px] mx-auto px-6">
+        <MenuCategory menuItems={menuItems} handleCartItems={handleCartItems} />
+      </main>
+    </>
   );
 };
 
