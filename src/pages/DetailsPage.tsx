@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom";
-import { MenuCategoryType } from "../types";
+import { CartItemsType, MenuCategoryType } from "../types";
 import Loading from "../components/Loading";
 import DetailsImage from "../components/DetailsImage";
 import Ingredients from "../components/Ingredients";
 import DetailsOverview from "../components/DetailsOverview";
+import DetailsFooter from "../components/DetailsFooter";
 
 type ItemDetailsProp = {
   menuItems: MenuCategoryType;
+  handleCartItems: (newItem: CartItemsType) => void;
 };
 
-const DetailsPage = ({ menuItems }: ItemDetailsProp) => {
+const DetailsPage = ({ menuItems, handleCartItems }: ItemDetailsProp) => {
   const { id } = useParams();
 
   const items = Object.entries(menuItems)
@@ -37,6 +39,12 @@ const DetailsPage = ({ menuItems }: ItemDetailsProp) => {
           <div className="pt-10">
             {item.ingredients && <Ingredients ingredients={item.ingredients} />}
           </div>
+          <DetailsFooter
+            name={item.name}
+            price={item.price}
+            img={item.image_url}
+            handleCartItems={handleCartItems}
+          />
         </div>
       </section>
     );

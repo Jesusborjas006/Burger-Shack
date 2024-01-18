@@ -17,7 +17,6 @@ function App() {
     drinks: [],
   });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
-  console.log(cartItems);
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);
@@ -46,7 +45,12 @@ function App() {
       />
       <Route
         path="/details/:id"
-        element={<DetailsPage menuItems={menuItems} />}
+        element={
+          <DetailsPage
+            menuItems={menuItems}
+            handleCartItems={handleCartItems}
+          />
+        }
       />
       <Route path="cart" element={<CartPage cartItems={cartItems} />} />
       <Route path="*" element={<NotFound />} />
