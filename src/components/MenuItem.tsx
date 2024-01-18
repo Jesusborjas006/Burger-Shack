@@ -38,7 +38,7 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
             className="bg-orange-500 text-white font-bold rounded-full px-4 py-2"
             onClick={() =>
               handleCartItems({
-                id: item.id,
+                id: Date.now(),
                 name: item.name,
                 price: item.price,
                 img: item.image_url,

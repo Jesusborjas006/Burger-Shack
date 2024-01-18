@@ -48,7 +48,7 @@ function App() {
         path="/details/:id"
         element={<DetailsPage menuItems={menuItems} />}
       />
-      <Route path="cart" element={<CartPage />} />
+      <Route path="cart" element={<CartPage cartItems={cartItems} />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

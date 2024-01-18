@@ -17,7 +17,7 @@ const Menu = ({ menuItems, cartItems, handleCartItems }: MenuProps) => {
           <p className="text-lg">Cart Items ({cartItems.length})</p>
         </Link>
       </Navbar>
-      <main className="max-w-[1640px] mx-auto px-8">
+      <main className="max-w-[1640px] mx-auto px-6">
         <MenuCategory menuItems={menuItems} handleCartItems={handleCartItems} />
       </main>
     </>
