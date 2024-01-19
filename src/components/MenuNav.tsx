@@ -8,8 +8,9 @@ const MenuNav = () => {
           <a
             className="p-2 mx-4 cursor-pointer text-lg capitalize hover:underline"
             href={`#${link}`}
+            key={link}
           >
-            <li key={link}>{link.replace(/([a-z])([A-Z])/g, "$1 $2")}</li>
+            <li>{link.replace(/([a-z])([A-Z])/g, "$1 $2")}</li>
           </a>
         ))}
       </ul>

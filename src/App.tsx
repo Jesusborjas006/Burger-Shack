@@ -22,6 +22,13 @@ function App() {
     setCartItems([...cartItems, newItem]);
   };
 
+  const removeCartItem = (itemId: number) => {
+    const filtered = cartItems.filter((items) => {
+      return items.id !== itemId;
+    });
+    setCartItems(filtered);
+  };
+
   useEffect(() => {
     const fetchMenu = async () => {
       const response = await fetch(`${url}/menu`);
@@ -52,7 +59,12 @@ function App() {
           />
         }
       />
-      <Route path="cart" element={<CartPage cartItems={cartItems} />} />
+      <Route
+        path="cart"
+        element={
+          <CartPage cartItems={cartItems} removeCartItem={removeCartItem} />
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

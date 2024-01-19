@@ -4,9 +4,10 @@ import { CartItemsType } from "../types";
 
 type CartPageProps = {
   cartItems: CartItemsType[];
+  removeCartItem: (itemId: number) => void;
 };
 
-const CartPage = ({ cartItems }: CartPageProps) => {
+const CartPage = ({ cartItems, removeCartItem }: CartPageProps) => {
   const getTotalCost = (arr: CartItemsType[]) => {
     const total = arr.reduce((acc, current) => {
       return (acc += current.price);
@@ -28,13 +29,13 @@ const CartPage = ({ cartItems }: CartPageProps) => {
       <div className="max-w-[1640px] mx-auto px-6 pb-10 flex flex-col lg:flex-row">
         <div className="flex flex-col gap-7 justify-evenly shadow-md border lg:mr-10 lg:w-[70%] py-8 rounded-2xl">
           {cartItems.length === 0 ? (
-            <p className="text-center">Add an item to view order</p>
+            <p className="text-center">Bag is empty</p>
           ) : (
             <>
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex items-center justify-between px-4 md:px-8 lg:px-12"
+                  className="flex items-center justify-between gap-x-2 px-4 md:px-8 lg:px-12"
                 >
                   <div className="flex items-center">
                     <img
@@ -44,7 +45,15 @@ const CartPage = ({ cartItems }: CartPageProps) => {
                     />
                     <p className="font-semibold md:text-lg ">{item.name}</p>
                   </div>
-                  <p>${item.price}</p>
+                  <div className="flex items-center gap-x-8">
+                    <p className="font-bold">${item.price}</p>
+                    <button
+                      className="bg-red-500 text-white w-[30px] py-1 rounded-full font-bold hover:bg-red-800"
+                      onClick={() => removeCartItem(item.id)}
+                    >
+                      X
+                    </button>
+                  </div>
                 </div>
               ))}
             </>
