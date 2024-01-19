@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { CartItemsType } from "../types";
+import { useState } from "react";
 
 type DetailsFooterProps = {
   name: string;
@@ -14,6 +15,7 @@ const DetailsFooter = ({
   img,
   handleCartItems,
 }: DetailsFooterProps) => {
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
   return (
@@ -21,6 +23,15 @@ const DetailsFooter = ({
       <p className="text-lg">
         <span className="font-bold">Total: </span>${price}
       </p>
+      <select
+        className="border"
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+      </select>
       <button
         className="bg-orange-500 text-white font-bold text-lg rounded-full px-14 py-2"
         onClick={() => {
@@ -29,6 +40,7 @@ const DetailsFooter = ({
             name,
             price,
             img,
+            quantity,
           }),
             navigate(-1);
         }}
