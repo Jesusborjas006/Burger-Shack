@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CartItemsType, MenuCategoryType } from "./types";
-import Menu from "./components/Menu";
+import Menu from "./pages/Menu";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
@@ -17,7 +17,6 @@ function App() {
     drinks: [],
   });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
-  console.log(cartItems);
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);

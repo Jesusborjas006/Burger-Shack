@@ -1,7 +1,7 @@
 import { CartItemsType, MenuCategoryType } from "../types";
-import MenuCategory from "./MenuCategory";
-import MenuNav from "./MenuNav";
-import Navbar from "./Navbar";
+import MenuCategory from "../components/MenuCategory";
+import MenuNav from "../components/MenuNav";
+import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 type MenuProps = {
@@ -34,5 +34,3 @@ const Menu = ({ menuItems, cartItems, handleCartItems }: MenuProps) => {
 };
 
 export default Menu;
-
-// max-w-[1640px] mx-auto px-6
