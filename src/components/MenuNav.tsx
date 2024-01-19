@@ -6,7 +6,7 @@ const MenuNav = () => {
       <ul className="inline-flex flex-col font-medium mt-10 pt-10 gap-y-4">
         {navLinks.map((link) => (
           <a
-            className="p-2 mx-7 cursor-pointer text-lg capitalize "
+            className="p-2 mx-4 cursor-pointer text-lg capitalize hover:underline"
             href={`#${link}`}
           >
             <li key={link}>{link.replace(/([a-z])([A-Z])/g, "$1 $2")}</li>

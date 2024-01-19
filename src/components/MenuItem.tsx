@@ -18,7 +18,7 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
       </Link>
       <div className="px-3 py-5">
         <Link to={`/details/${item.id}`}>
-          <h3 className="text-2xl font-bold mb-1">{item.name}</h3>
+          <h3 className="text-[23px] font-bold mb-1">{item.name}</h3>
         </Link>
         <p className="text-gray-600 mb-2">
           {item.description.length >= 105
@@ -29,13 +29,13 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
           ${item.price} | {item.calories} cals
         </p>
         <div className="flex justify-evenly mt-8">
-          <Link to={`/details/${item.id}`}>
+          <Link to={`/details/${item.id}`} className="w-[50%]">
             <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full px-4 py-2">
               Details
             </button>
           </Link>
           <button
-            className="bg-orange-500 text-white font-bold rounded-full px-4 py-2"
+            className="bg-orange-500 text-white font-bold rounded-full w-[50%]"
             onClick={() =>
               handleCartItems({
                 id: Date.now(),
