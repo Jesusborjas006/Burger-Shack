@@ -8,7 +8,7 @@ type MenuItemProps = {
 
 const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
   return (
-    <div className="border rounded-3xl shadow-lg hover:scale-105 duration-300">
+    <div className="border rounded-3xl shadow-lg hover:scale-105 duration-300 max-w-[480px]">
       <Link to={`/details/${item.id}`}>
         <img
           className="w-full h-[260px] object-cover rounded-t-3xl"
@@ -22,7 +22,7 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
         </Link>
         <p className="text-gray-600 mb-2">
           {item.description.length >= 105
-            ? `${item.description.slice(0, 100)}...`
+            ? `${item.description.slice(0, 80)}...`
             : item.description}
         </p>
         <p className="text-gray-600">
