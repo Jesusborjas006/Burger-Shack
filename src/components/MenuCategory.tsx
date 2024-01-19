@@ -14,8 +14,8 @@ const MenuCategory = ({ menuItems, handleCartItems }: MenuCategoryProps) => {
   return (
     <>
       {Object.entries(menuItems).map(([category, items]) => (
-        <section key={category} className="my-12" id={category}>
-          <h2 className="text-3xl font-bold my-4">
+        <section key={category} className="py-8" id={category}>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold pb-5 pt-8">
             {category.replace(/([a-z])([A-Z])/g, "$1 $2").toUpperCase()}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-10 ">
