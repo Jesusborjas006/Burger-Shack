@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CartItemsType, MenuItemType } from "../types";
+import { useState } from "react";
 
 type MenuItemProps = {
   item: MenuItemType;
@@ -7,6 +8,8 @@ type MenuItemProps = {
 };
 
 const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <div className="border rounded-3xl shadow-lg hover:scale-105 duration-300 max-w-[480px]">
       <Link to={`/details/${item.id}`}>
@@ -34,6 +37,15 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
               Details
             </button>
           </Link>
+          <select
+            className="border"
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+          </select>
           <button
             className="bg-orange-500 text-white font-bold rounded-full w-[50%]"
             onClick={() =>
@@ -42,6 +54,7 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
                 name: item.name,
                 price: item.price,
                 img: item.image_url,
+                quantity: quantity,
               })
             }
           >

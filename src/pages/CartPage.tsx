@@ -10,7 +10,7 @@ type CartPageProps = {
 const CartPage = ({ cartItems, removeCartItem }: CartPageProps) => {
   const getTotalCost = (arr: CartItemsType[]) => {
     const total = arr.reduce((acc, current) => {
-      return (acc += current.price);
+      return acc + current.price * current.quantity;
     }, 0);
     return Number(total).toFixed(2);
   };
@@ -46,6 +46,7 @@ const CartPage = ({ cartItems, removeCartItem }: CartPageProps) => {
                     <p className="font-semibold md:text-lg ">{item.name}</p>
                   </div>
                   <div className="flex items-center gap-x-8">
+                    <p>Quantity: {item.quantity}</p>
                     <p className="font-bold">${item.price}</p>
                     <button
                       className="bg-red-500 text-white w-[30px] py-1 rounded-full font-bold hover:bg-red-800"

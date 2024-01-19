@@ -17,6 +17,7 @@ function App() {
     drinks: [],
   });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
+  console.log(cartItems);
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);
