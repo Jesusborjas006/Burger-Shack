@@ -31,7 +31,40 @@
           "aioli",
           "whole grain bun"
         ],
-        "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=3099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image_url": "https://images.pexels.com/photos/7963144/pexels-photo-7963144.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      {
+        "id": 11,
+        "name": "BBQ Bacon Cheeseburger",
+        "description": "Indulge in the bold flavors of our BBQ Bacon Cheeseburger. A juicy beef patty topped with crispy bacon, cheddar cheese, lettuce, tomato, and smothered in tangy BBQ sauce. Served on a toasted brioche bun.",
+        "price": 9.49,
+        "calories": 650,
+        "ingredients": [
+          "beef patty",
+          "bacon",
+          "cheddar cheese",
+          "lettuce",
+          "tomato",
+          "BBQ sauce",
+          "brioche bun"
+        ],
+        "image_url": "https://images.pexels.com/photos/3764353/pexels-photo-3764353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      {
+        "id": 12,
+        "name": "Spicy Jalapeño Burger",
+        "description": "Kick up the heat with our Spicy Jalapeño Burger. A flame-grilled beef patty topped with melted pepper jack cheese, fresh jalapeños, lettuce, and spicy mayo. Served on a sesame seed bun.",
+        "price": 8.99,
+        "calories": 600,
+        "ingredients": [
+          "beef patty",
+          "pepper jack cheese",
+          "jalapeños",
+          "lettuce",
+          "spicy mayo",
+          "sesame seed bun"
+        ],
+        "image_url": "https://images.pexels.com/photos/6488939/pexels-photo-6488939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       }
     ],
     "chickenSandwiches": [
@@ -63,7 +96,7 @@
           "ranch dressing",
           "sesame seed bun"
         ],
-        "image_url": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image_url": "https://images.pexels.com/photos/9207056/pexels-photo-9207056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
         "id": 5,
@@ -81,7 +114,33 @@
           "ranch dressing",
           "toasted ciabatta roll"
         ],
-        "image_url": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image_url": "https://images.pexels.com/photos/15076700/pexels-photo-15076700/free-photo-of-burger.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      }
+    ],
+    "sides": [
+      {
+        "id": 8,
+        "name": "Crispy Potato Wedges",
+        "description": "Irresistibly crispy potato wedges seasoned to perfection. Served with your choice of dipping sauce.",
+        "price": 3.49,
+        "calories": 300,
+        "image_url": "https://images.unsplash.com/photo-1623238913973-21e45cced554?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "id": 9,
+        "name": "Garlic Parmesan Fries",
+        "description": "Golden fries tossed in garlic and Parmesan seasoning. A flavorful twist on a classic side.",
+        "price": 3.99,
+        "calories": 350,
+        "image_url": "https://images.pexels.com/photos/6006652/pexels-photo-6006652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      {
+        "id": 10,
+        "name": "Onion Rings",
+        "description": "Crunchy and delicious onion rings, battered and fried to perfection. Served with your favorite dipping sauce.",
+        "price": 4.49,
+        "calories": 280,
+        "image_url": "https://images.pexels.com/photos/18976848/pexels-photo-18976848/free-photo-of-close-up-of-onion-rings-served-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       }
     ],
     "drinks": [
