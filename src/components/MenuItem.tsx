@@ -32,12 +32,12 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
         <div className="absolute bottom-5 left-0 w-full">
           <div className="flex justify-evenly">
             <Link to={`/details/${item.id}`}>
-              <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full px-4 py-2">
+              <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full px-4 py-2 hover:text-white hover:bg-orange-500 duration-300">
                 Details
               </button>
             </Link>
             <select
-              className="border rounded-full pl-4 w-[18%]"
+              className="border rounded-full pl-4 w-[18%] cursor-pointer"
               value={quantity}
               onChange={(e) => setQuantity(Number(e.target.value))}
             >
@@ -46,7 +46,7 @@ const MenuItem = ({ item, handleCartItems }: MenuItemProps) => {
               <option value={3}>3</option>
             </select>
             <button
-              className="bg-orange-500 text-white font-bold rounded-full w-[40%]"
+              className="bg-orange-500 text-white border-2 border-orange-500 font-bold rounded-full w-[40%]  hover:text-orange-500 hover:border-orange-500 hover:bg-white duration-300"
               onClick={() =>
                 handleCartItems({
                   id: Date.now(),

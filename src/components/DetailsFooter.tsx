@@ -24,7 +24,7 @@ const DetailsFooter = ({
         <span className="font-bold">Total: </span>${price}
       </p>
       <select
-        className="border"
+        className="border rounded-full px-4 py-2 cursor-pointer"
         value={quantity}
         onChange={(e) => setQuantity(Number(e.target.value))}
       >
@@ -33,7 +33,7 @@ const DetailsFooter = ({
         <option value={3}>3</option>
       </select>
       <button
-        className="bg-orange-500 text-white font-bold text-lg rounded-full px-14 py-2"
+        className="bg-orange-500 text-white border-2 border-orange-500 font-bold text-lg rounded-full px-14 py-2 hover:text-orange-500 hover:border-orange-500 hover:bg-white duration-300"
         onClick={() => {
           handleCartItems({
             id: Date.now(),
