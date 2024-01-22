@@ -21,7 +21,7 @@ const DetailsFooter = ({
   return (
     <footer className="bg-white flex flex-col items-center w-screen absolute bottom-0 left-0 pt-3 pb-5 gap-3">
       <p className="text-lg">
-        <span className="font-bold">Total: </span>${price}
+        <span className="font-bold">Total: </span>${price * quantity}
       </p>
       <select
         className="border rounded-full px-4 py-2 cursor-pointer"
