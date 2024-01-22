@@ -143,6 +143,39 @@
         "image_url": "https://images.pexels.com/photos/18976848/pexels-photo-18976848/free-photo-of-close-up-of-onion-rings-served-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       }
     ],
+    "desserts": [
+      {
+        "id": 13,
+        "name": "Chocolate Fudge Brownie",
+        "description": "Indulge your sweet tooth with our rich and gooey chocolate fudge brownie. Topped with a scoop of vanilla ice cream and drizzled with chocolate syrup.",
+        "ingredients": [
+          "brownie mix",
+          "chocolate chips",
+          "cocoa powder",
+          "vanilla ice cream",
+          "chocolate syrup"
+        ],
+        "price": 4.99,
+        "calories": 400,
+        "image_url": "https://images.pexels.com/photos/13999756/pexels-photo-13999756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      {
+        "id": 14,
+        "name": "Strawberry Cheesecake",
+        "description": "Experience the delightful combination of creamy cheesecake and fresh strawberries. A perfect way to end your meal on a sweet note.",
+        "ingredients": [
+          "cream cheese",
+          "sugar",
+          "eggs",
+          "vanilla extract",
+          "strawberries",
+          "graham cracker crust"
+        ],
+        "price": 5.49,
+        "calories": 450,
+        "image_url": "https://images.pexels.com/photos/14631305/pexels-photo-14631305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      }
+    ],
     "drinks": [
       {
         "id": 6,
