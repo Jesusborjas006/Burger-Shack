@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const url = "http://localhost:9000";
 
@@ -65,6 +66,7 @@ function App() {
           <CartPage cartItems={cartItems} removeCartItem={removeCartItem} />
         }
       />
+      <Route path="checkout" element={<CheckoutPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
