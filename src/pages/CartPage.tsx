@@ -30,7 +30,7 @@ const CartPage = ({ cartItems, removeCartItem }: CartPageProps) => {
         <div className="flex flex-col-reverse lg:flex-col mt-10 lg:mt-0 gap-10 ">
           <TotalCost cartItems={cartItems} />
           <Link to="/">
-            <button className="border border-orange-500 text-orange-500 font-bold rounded-full w-full p-4">
+            <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full w-full p-4 hover:text-white hover:bg-orange-500 duration-300">
               Add more items
             </button>
           </Link>

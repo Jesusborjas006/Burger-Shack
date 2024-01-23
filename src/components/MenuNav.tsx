@@ -1,4 +1,10 @@
-const navLinks = ["burgers", "chickenSandwiches", "drinks"];
+const navLinks = [
+  "burgers",
+  "chickenSandwiches",
+  "sides",
+  "desserts",
+  "drinks",
+];
 
 const MenuNav = () => {
   return (
