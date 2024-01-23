@@ -2,11 +2,11 @@ import Navbar from "../components/Navbar";
 
 const CheckoutPage = () => {
   return (
-    <section className="h-screen border">
+    <section className=" border">
       <Navbar children={undefined} />
-      <div className="border min-w-[340px] max-w-[450px] mx-auto px-6 pb-10">
+      <div className="border min-w-[340px] max-w-[450px] mx-auto px-6 pb-10 my-14 rounded-xl shadow-md">
         <form className="space-y-12" id="contact-form">
-          <h2 className="text-3xl font-bold mt-10">Contact Info</h2>
+          <h2 className="text-3xl font-bold mt-8">Contact Info</h2>
           <div>
             <label htmlFor="email">Email Address</label>
             <br />
