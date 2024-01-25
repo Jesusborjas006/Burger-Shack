@@ -113,18 +113,18 @@ const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
           </div>
           <button
             className={`text-white w-full rounded-full py-3 font-semibold ${
-              !form.email &&
-              !form.firstName &&
-              !form.lastName &&
+              !form.email ||
+              !form.firstName ||
+              !form.lastName ||
               !form.phoneNumber
                 ? "cursor-not-allowed bg-orange-200"
                 : "bg-orange-500"
             } `}
             onClick={handleFormSubmit}
             disabled={
-              !form.email &&
-              !form.firstName &&
-              !form.lastName &&
+              !form.email ||
+              !form.firstName ||
+              !form.lastName ||
               !form.phoneNumber
             }
           >
