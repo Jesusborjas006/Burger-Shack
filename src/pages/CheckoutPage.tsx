@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { CartItemsType } from "../types";
-import { useNavigate } from "react-router-dom";
+import OrderConfirmedModal from "../components/OrderConfirmedModal";
 
 type CheckoutPageProps = {
   cartItems: CartItemsType[];
@@ -21,7 +21,7 @@ const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
     lastName: "",
     phoneNumber: "",
   });
-  const navigate = useNavigate();
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   const handleFormChange = (e: { target: { name: string; value: string } }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,11 +30,8 @@ const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
   const handleFormSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (form.email && form.firstName && form.lastName && form.phoneNumber) {
-      console.log("Accepted");
       setCartItems([]);
-      navigate("/");
-    } else {
-      console.log("Failed");
+      setModalIsActive((prevState) => !prevState);
     }
   };
 
@@ -43,11 +40,11 @@ const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
   const total = subTotal + tax;
 
   return (
-    <section className=" border">
+    <section>
       <Navbar children={undefined} />
       <div className="border min-w-[340px] max-w-[450px] mx-auto px-6 pb-10 my-14 rounded-xl shadow-md">
-        <form className="space-y-12">
-          <h2 className="text-3xl font-bold mt-8">Contact Info</h2>
+        <form className="space-y-8">
+          <h2 className="text-3xl font-bold mt-4">Contact Info</h2>
           <div>
             <label htmlFor="email">Email Address</label>
             <br />
@@ -132,6 +129,7 @@ const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
           </button>
         </form>
       </div>
+      {modalIsActive && <OrderConfirmedModal />}
     </section>
   );
 };
