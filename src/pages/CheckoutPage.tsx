@@ -1,6 +1,22 @@
 import Navbar from "../components/Navbar";
+import { CartItemsType } from "../types";
 
-const CheckoutPage = () => {
+type CheckoutPageProps = {
+  cartItems: CartItemsType[];
+};
+
+const CheckoutPage = ({ cartItems }: CheckoutPageProps) => {
+  const getTotalCost = (arr: CartItemsType[]) => {
+    const total = arr.reduce((acc, current) => {
+      return (acc += current.price * current.quantity);
+    }, 0);
+    return total.toFixed(2);
+  };
+
+  const subTotal = Number(getTotalCost(cartItems));
+  const tax = subTotal * 0.06;
+  const total = subTotal + tax;
+
   return (
     <section className=" border">
       <Navbar children={undefined} />
@@ -44,13 +60,13 @@ const CheckoutPage = () => {
         </form>
         <div className="flex-col space-y-1 my-8">
           <p className="flex justify-between">
-            Subtotal: <span>$0.00</span>
+            Subtotal: <span>${subTotal}</span>
           </p>
           <p className="flex justify-between">
-            Taxes: <span>$0.00</span>
+            Taxes: <span>${tax.toFixed(2)}</span>
           </p>
           <p className="flex justify-between font-bold">
-            Total: <span>$0.00</span>
+            Total: <span>${total.toFixed(2)}</span>
           </p>
         </div>
         <button
