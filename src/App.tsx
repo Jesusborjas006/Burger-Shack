@@ -66,7 +66,12 @@ function App() {
           <CartPage cartItems={cartItems} removeCartItem={removeCartItem} />
         }
       />
-      <Route path="checkout" element={<CheckoutPage cartItems={cartItems} />} />
+      <Route
+        path="checkout"
+        element={
+          <CheckoutPage cartItems={cartItems} setCartItems={setCartItems} />
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

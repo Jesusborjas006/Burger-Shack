@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { CartItemsType } from "../types";
+import { useNavigate } from "react-router-dom";
 
 type CheckoutPageProps = {
   cartItems: CartItemsType[];
+  setCartItems: React.Dispatch<React.SetStateAction<CartItemsType[] | []>>;
 };
 
-const CheckoutPage = ({ cartItems }: CheckoutPageProps) => {
+const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
   const getSubTotalCost = (arr: CartItemsType[]) => {
     const total = arr.reduce((acc, current) => {
       return (acc += current.price * current.quantity);
@@ -19,7 +21,7 @@ const CheckoutPage = ({ cartItems }: CheckoutPageProps) => {
     lastName: "",
     phoneNumber: "",
   });
-  console.log(form);
+  const navigate = useNavigate();
 
   const handleFormChange = (e: { target: { name: string; value: string } }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,6 +31,8 @@ const CheckoutPage = ({ cartItems }: CheckoutPageProps) => {
     e.preventDefault();
     if (form.email && form.firstName && form.lastName && form.phoneNumber) {
       console.log("Accepted");
+      setCartItems([]);
+      navigate("/");
     } else {
       console.log("Failed");
     }
