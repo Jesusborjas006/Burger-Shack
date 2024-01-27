@@ -13,7 +13,7 @@ const TotalCost = ({ cartItems }: TotalCostProps) => {
   };
 
   return (
-    <div className="shadow-md min-w-[300px] border flex justify-around items-center h-[70px] font-bold md:text-lg w-[30%] rounded-2xl">
+    <div className="shadow-md min-w-[300px] max-w-[400px] mx-auto border flex justify-around items-center h-[70px] font-bold md:text-lg rounded-2xl w-full ">
       <h4>Subtotal:</h4>
       <p>${getTotalCost(cartItems)}</p>
     </div>

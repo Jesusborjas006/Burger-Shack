@@ -27,13 +27,20 @@ const CartPage = ({ cartItems, removeCartItem }: CartPageProps) => {
             <CartItems cartItems={cartItems} removeCartItem={removeCartItem} />
           )}
         </div>
-        <div className="flex flex-col-reverse lg:flex-col mt-10 lg:mt-0 gap-10 ">
+        <div className="flex flex-col lg:flex-col mt-10 lg:mt-0">
           <TotalCost cartItems={cartItems} />
-          <Link to="/">
-            <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full w-full p-4 hover:text-white hover:bg-orange-500 duration-300">
+          <Link to="/" className="mx-auto">
+            <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-full lg:w-full p-4 hover:text-white hover:bg-orange-500 duration-300 mt-10 mb-3 min-w-[300px] max-w-[400px]">
               Add more items
             </button>
           </Link>
+          {cartItems.length > 0 && (
+            <Link to="/checkout" className="mx-auto">
+              <button className="text-white bg-black font-bold rounded-full p-4 min-w-[300px] max-w-[400px]">
+                Proceed To Checkout
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </section>
