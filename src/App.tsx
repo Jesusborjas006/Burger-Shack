@@ -18,7 +18,9 @@ function App() {
     drinks: [],
   });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
+  console.log("dshjadbjshcjhsdbc: ", error);
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);
@@ -33,10 +35,22 @@ function App() {
 
   useEffect(() => {
     const fetchMenu = async () => {
-      const response = await fetch(`${url}/menu`);
-      const data = await response.json();
-      setMenuItems(data);
-      setLoading(false);
+      try {
+        setIsLoading(true);
+        const response = await fetch(`${url}/menu`);
+
+        if (!response.ok) {
+          setIsLoading(false);
+          setError("Something went wrong with fetching menu items");
+          throw new Error("Something went wrong with fetching menu items");
+        }
+        const data = await response.json();
+        setMenuItems(data);
+        setIsLoading(false);
+      } catch (err: any) {
+        setError(err);
+        setIsLoading(false);
+      }
     };
     fetchMenu();
   }, []);
@@ -50,7 +64,8 @@ function App() {
             menuItems={menuItems}
             cartItems={cartItems}
             handleCartItems={handleCartItems}
-            loading={loading}
+            isLoading={isLoading}
+            error={error}
           />
         }
       />

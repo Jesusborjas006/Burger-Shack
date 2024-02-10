@@ -9,14 +9,16 @@ type MenuProps = {
   menuItems: MenuCategoryType;
   cartItems: CartItemsType[];
   handleCartItems: (newItem: CartItemsType) => void;
-  loading: boolean;
+  isLoading: boolean;
+  error: string;
 };
 
 const Menu = ({
   menuItems,
   cartItems,
   handleCartItems,
-  loading,
+  isLoading,
+  error,
 }: MenuProps) => {
   return (
     <div>
@@ -26,9 +28,8 @@ const Menu = ({
         </Link>
       </Navbar>
       <main className="lg:flex">
-        {loading ? (
-          <Loading />
-        ) : (
+        {isLoading && <Loading />}
+        {!isLoading && !error && (
           <>
             <div className="lg:w-[18%]">
               <MenuNav />
@@ -40,6 +41,11 @@ const Menu = ({
               />
             </div>
           </>
+        )}
+        {error && (
+          <p className="flex justify-center w-full h-svh items-center text-lg font-semibold">
+            Failed to fetch menu items
+          </p>
         )}
       </main>
     </div>
