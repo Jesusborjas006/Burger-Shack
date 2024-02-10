@@ -18,6 +18,7 @@ function App() {
     drinks: [],
   });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
+  const [loading, setLoading] = useState(true);
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);
@@ -35,6 +36,7 @@ function App() {
       const response = await fetch(`${url}/menu`);
       const data = await response.json();
       setMenuItems(data);
+      setLoading(false);
     };
     fetchMenu();
   }, []);
@@ -48,6 +50,7 @@ function App() {
             menuItems={menuItems}
             cartItems={cartItems}
             handleCartItems={handleCartItems}
+            loading={loading}
           />
         }
       />
