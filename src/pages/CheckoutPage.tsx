@@ -15,10 +15,8 @@ type CheckoutPageProps = {
 
 const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
   const [form, setForm] = useState({
-    email: "",
     firstName: "",
     lastName: "",
-    phoneNumber: "",
   });
   const [promoCodeInput, setPromoCodeInput] = useState("");
   const [modalIsActive, setModalIsActive] = useState(false);
@@ -29,17 +27,17 @@ const CheckoutPage = ({ cartItems, setCartItems }: CheckoutPageProps) => {
 
   const handleFormSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (form.email && form.firstName && form.lastName && form.phoneNumber) {
+    if (form.firstName && form.lastName) {
       setCartItems([]);
       setModalIsActive((prevState) => !prevState);
     }
   };
 
   return (
-    <section className="">
+    <section>
       <Navbar children={undefined} />
       <div className="px-4 relative">
-        <div className="border min-w-[340px] max-w-[450px] mx-auto px-6 pb-10 my-14 rounded-xl shadow-md">
+        <div className="border min-w-[340px] max-w-[450px] mx-auto px-6 pb-10 my-20 rounded-xl shadow-md">
           <Link
             to="/cart"
             className="text-3xl text-white bg-black hover:text-black hover:bg-white duration-300 absolute rounded-full w-[70px] h-[70px] flex justify-center items-center top-[-10px] left-8 cursor-pointer"
