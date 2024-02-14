@@ -6,21 +6,18 @@ import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import getMenu from "./services/apiMenu";
+import supabase from "./services/supabase";
 
 const url = "http://localhost:9000";
 
 function App() {
   const [menuItems, setMenuItems] = useState<
     MenuCategoryType | { burgers: []; chickenSandwiches: []; drinks: [] }
-  >({
-    burgers: [],
-    chickenSandwiches: [],
-    drinks: [],
-  });
+  >({});
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-  console.log("dshjadbjshcjhsdbc: ", error);
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);
@@ -33,26 +30,48 @@ function App() {
     setCartItems(filtered);
   };
 
+  // useEffect(() => {
+  //   const fetchMenu = async () => {
+  //     try {
+  //       setIsLoading(true);
+  //       const response = await fetch(`${url}/menu`);
+
+  //       if (!response.ok) {
+  //         setIsLoading(false);
+  //         setError("Something went wrong with fetching menu items");
+  //         throw new Error("Something went wrong with fetching menu items");
+  //       }
+  //       const data = await response.json();
+  //       setMenuItems(data);
+  //       setIsLoading(false);
+  //     } catch (err: any) {
+  //       setError(err);
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchMenu();
+  // }, []);
+
+  // console.log(menuItems);
+
   useEffect(() => {
-    const fetchMenu = async () => {
+    const getMenu = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`${url}/menu`);
+        const { data, error } = await supabase.from("menu").select("*");
 
-        if (!response.ok) {
-          setIsLoading(false);
-          setError("Something went wrong with fetching menu items");
-          throw new Error("Something went wrong with fetching menu items");
+        if (error) {
+          throw new Error("Menu could not be loaded");
         }
-        const data = await response.json();
-        setMenuItems(data);
+
+        setMenuItems(data[0].menu);
         setIsLoading(false);
-      } catch (err: any) {
-        setError(err);
+      } catch (error) {
+        setError(error);
         setIsLoading(false);
       }
     };
-    fetchMenu();
+    getMenu();
   }, []);
 
   return (
