@@ -6,10 +6,7 @@ import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import getMenu from "./services/apiMenu";
 import supabase from "./services/supabase";
-
-const url = "http://localhost:9000";
 
 function App() {
   const [menuItems, setMenuItems] = useState<
@@ -29,30 +26,6 @@ function App() {
     });
     setCartItems(filtered);
   };
-
-  // useEffect(() => {
-  //   const fetchMenu = async () => {
-  //     try {
-  //       setIsLoading(true);
-  //       const response = await fetch(`${url}/menu`);
-
-  //       if (!response.ok) {
-  //         setIsLoading(false);
-  //         setError("Something went wrong with fetching menu items");
-  //         throw new Error("Something went wrong with fetching menu items");
-  //       }
-  //       const data = await response.json();
-  //       setMenuItems(data);
-  //       setIsLoading(false);
-  //     } catch (err: any) {
-  //       setError(err);
-  //       setIsLoading(false);
-  //     }
-  //   };
-  //   fetchMenu();
-  // }, []);
-
-  // console.log(menuItems);
 
   useEffect(() => {
     const getMenu = async () => {
