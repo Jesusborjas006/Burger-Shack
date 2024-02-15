@@ -6,7 +6,8 @@ import NotFound from "./components/NotFound";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import supabase from "./services/supabase";
+// import supabase from "./services/supabase";
+import menuData from "./data/menu.json";
 
 function App() {
   const [menuItems, setMenuItems] = useState<
@@ -40,19 +41,47 @@ function App() {
     setCartItems(filtered);
   };
 
+  // SUPABASE DATABASE
+  // useEffect(() => {
+  //   const getMenu = async () => {
+  //     try {
+  //       setIsLoading(true);
+  //       const { data, error } = await supabase.from("menu").select("*");
+
+  //       if (error) {
+  //         throw new Error("Menu could not be loaded");
+  //       }
+
+  //       setMenuItems(data[0].menu);
+  //       setIsLoading(false);
+  //     } catch (error) {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   getMenu();
+  // }, []);
+
   useEffect(() => {
     const getMenu = async () => {
       try {
         setIsLoading(true);
-        const { data, error } = await supabase.from("menu").select("*");
+        const response = await fetch("http://localhost:9000/menu");
 
-        if (error) {
+        if (!response.ok) {
           throw new Error("Menu could not be loaded");
         }
 
-        setMenuItems(data[0].menu);
-        setIsLoading(false);
-      } catch (error) {
+        let data = await response.json();
+        data = menuData.menu;
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+
+        console.log(data);
+        setMenuItems(data);
+      } catch (error: unknown) {
+        console.log(error);
         setIsLoading(false);
       }
     };
