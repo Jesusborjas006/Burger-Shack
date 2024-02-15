@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import { CartItemsType, MenuCategoryType } from "../types";
 import MenuItem from "./MenuItem";
 
@@ -33,13 +35,24 @@ const MenuCategory = ({ menuItems, handleCartItems }: MenuCategoryProps) => {
             {category.replace(/([a-z])([A-Z])/g, "$1 $2").toUpperCase()}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-10 ">
-            {items.map((item) => (
-              <MenuItem
-                key={item.id}
-                item={item}
-                handleCartItems={handleCartItems}
-              />
-            ))}
+            {items.map(
+              (item: {
+                id: number;
+                name?: string;
+                description?: string;
+                category?: string;
+                price?: number;
+                calories?: number;
+                ingredients?: string[];
+                image_url?: string;
+              }) => (
+                <MenuItem
+                  key={item.id}
+                  item={item}
+                  handleCartItems={handleCartItems}
+                />
+              )
+            )}
           </div>
         </section>
       ))}

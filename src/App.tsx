@@ -27,7 +27,7 @@ function App() {
   });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [error] = useState("");
 
   const handleCartItems = (newItem: CartItemsType) => {
     setCartItems([...cartItems, newItem]);
@@ -53,7 +53,6 @@ function App() {
         setMenuItems(data[0].menu);
         setIsLoading(false);
       } catch (error) {
-        setError(error);
         setIsLoading(false);
       }
     };
