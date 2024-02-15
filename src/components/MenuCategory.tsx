@@ -6,14 +6,28 @@ type MenuCategoryProps = {
   handleCartItems: (newItem: CartItemsType) => void;
 };
 
+const orderedKeys = [
+  "burgers",
+  "chickenSandwiches",
+  "sides",
+  "drinks",
+  "desserts",
+];
+
 const MenuCategory = ({ menuItems, handleCartItems }: MenuCategoryProps) => {
+  const sortedData = {};
+  orderedKeys.forEach((key) => {
+    if (Object.prototype.hasOwnProperty.call(menuItems, key)) {
+      sortedData[key] = menuItems[key];
+    }
+  });
   // Category are keys of the object
   // Items are the menu items themselves (The value of the keys)
   // [key, value]
 
   return (
     <>
-      {Object.entries(menuItems).map(([category, items]) => (
+      {Object.entries(sortedData).map(([category, items]) => (
         <section key={category} className="py-8" id={category}>
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold pb-5 pt-8">
             {category.replace(/([a-z])([A-Z])/g, "$1 $2").toUpperCase()}

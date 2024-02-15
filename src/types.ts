@@ -13,6 +13,8 @@ export type MenuCategoryType = {
   burgers: MenuItemType[];
   chickenSandwiches: MenuItemType[];
   drinks: MenuItemType[];
+  sides: MenuItemType[];
+  desserts: MenuItemType[];
   // Add more categories as needed
 };
 

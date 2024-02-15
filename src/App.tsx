@@ -10,8 +10,21 @@ import supabase from "./services/supabase";
 
 function App() {
   const [menuItems, setMenuItems] = useState<
-    MenuCategoryType | { burgers: []; chickenSandwiches: []; drinks: [] }
-  >({});
+    | MenuCategoryType
+    | {
+        sides: [];
+        desserts: [];
+        burgers: [];
+        chickenSandwiches: [];
+        drinks: [];
+      }
+  >({
+    sides: [],
+    desserts: [],
+    burgers: [],
+    chickenSandwiches: [],
+    drinks: [],
+  });
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
