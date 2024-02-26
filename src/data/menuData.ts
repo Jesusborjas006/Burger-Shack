@@ -1,4 +1,22 @@
-const menuData = {
+type MenuItem = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  calories?: number; // Optional property
+  ingredients?: string[]; // Optional property
+  image_url: string;
+};
+
+type MenuCategory = {
+  [key: string]: MenuItem[];
+};
+
+type MenuData = {
+  menu: MenuCategory;
+};
+
+const menuData: MenuData = {
   menu: {
     burgers: [
       {
