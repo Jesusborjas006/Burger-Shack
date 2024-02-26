@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 import { useEffect, useState } from "react";
 import { CartItemsType } from "./types";
 import Menu from "./pages/Menu";
@@ -10,10 +8,11 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 // import supabase from "./services/supabase";
 // import menuData from "./data/menu.json";
-import menuData from "./data/menuData.js";
+import menuData, { MenuDataType } from "./data/menuData.js";
 
 function App() {
-  const [menuItems, setMenuItems] = useState(menuData.menu);
+  const [menuItems, setMenuItems] = useState<MenuDataType>(menuData);
+  console.log(menuData);
 
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,13 +33,12 @@ function App() {
     const getMenu = async () => {
       try {
         setIsLoading(true);
-        const data = menuData.menu;
 
         setTimeout(() => {
           setIsLoading(false);
         }, 1000);
 
-        setMenuItems(data);
+        setMenuItems(menuData);
       } catch (error: unknown) {
         setIsLoading(false);
       }
@@ -54,7 +52,7 @@ function App() {
         path="/"
         element={
           <Menu
-            menuItems={menuItems}
+            menuItems={menuItems.menu}
             cartItems={cartItems}
             handleCartItems={handleCartItems}
             isLoading={isLoading}

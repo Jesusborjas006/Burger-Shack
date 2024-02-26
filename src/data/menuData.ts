@@ -1,4 +1,4 @@
-export type MenuItem = {
+export type MenuItemType = {
   id: number;
   name: string;
   description: string;
@@ -10,14 +10,18 @@ export type MenuItem = {
 };
 
 export type MenuCategoryType = {
-  [key: string]: MenuItem[];
+  burgers: MenuItemType[];
+  chickenSandwiches: MenuItemType[];
+  drinks: MenuItemType[];
+  sides: MenuItemType[];
+  desserts: MenuItemType[];
 };
 
-export type MenuData = {
+export type MenuDataType = {
   menu: MenuCategoryType;
 };
 
-const menuData: MenuData = {
+const menuData: MenuDataType = {
   menu: {
     burgers: [
       {
