@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CartItemsType, MenuCategoryType } from "./types";
+import { CartItemsType } from "./types";
 import Menu from "./pages/Menu";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound";
@@ -11,22 +11,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import menuData from "./data/menuData.js";
 
 function App() {
-  const [menuItems, setMenuItems] = useState<
-    | MenuCategoryType
-    | {
-        sides: [];
-        desserts: [];
-        burgers: [];
-        chickenSandwiches: [];
-        drinks: [];
-      }
-  >({
-    sides: [],
-    desserts: [],
-    burgers: [],
-    chickenSandwiches: [],
-    drinks: [],
-  });
+  const [menuItems, setMenuItems] = useState(menuData.menu);
 
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);

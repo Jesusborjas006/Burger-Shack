@@ -1,19 +1,20 @@
-type MenuItem = {
+export type MenuItem = {
   id: number;
   name: string;
   description: string;
   price: number;
-  calories?: number; // Optional property
-  ingredients?: string[]; // Optional property
+  calories?: number;
+  ingredients?: string[];
+  size?: string;
   image_url: string;
 };
 
-type MenuCategory = {
+export type MenuCategoryType = {
   [key: string]: MenuItem[];
 };
 
-type MenuData = {
-  menu: MenuCategory;
+export type MenuData = {
+  menu: MenuCategoryType;
 };
 
 const menuData: MenuData = {

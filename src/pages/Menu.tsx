@@ -1,9 +1,10 @@
-import { CartItemsType, MenuCategoryType } from "../types";
+import { CartItemsType } from "../types";
 import MenuCategory from "../components/MenuCategory";
 import MenuNav from "../components/MenuNav";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import { MenuCategoryType } from "../data/menuData";
 
 type MenuProps = {
   menuItems: MenuCategoryType;
