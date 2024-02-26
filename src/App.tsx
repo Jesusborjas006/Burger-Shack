@@ -7,7 +7,8 @@ import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 // import supabase from "./services/supabase";
-import menuData from "./data/menu.json";
+// import menuData from "./data/menu.json";
+import menuData from "./data/menuData.js";
 
 function App() {
   const [menuItems, setMenuItems] = useState<
@@ -26,6 +27,7 @@ function App() {
     chickenSandwiches: [],
     drinks: [],
   });
+
   const [cartItems, setCartItems] = useState<CartItemsType[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error] = useState("");
@@ -41,47 +43,18 @@ function App() {
     setCartItems(filtered);
   };
 
-  // SUPABASE DATABASE
-  // useEffect(() => {
-  //   const getMenu = async () => {
-  //     try {
-  //       setIsLoading(true);
-  //       const { data, error } = await supabase.from("menu").select("*");
-
-  //       if (error) {
-  //         throw new Error("Menu could not be loaded");
-  //       }
-
-  //       setMenuItems(data[0].menu);
-  //       setIsLoading(false);
-  //     } catch (error) {
-  //       setIsLoading(false);
-  //     }
-  //   };
-  //   getMenu();
-  // }, []);
-
   useEffect(() => {
     const getMenu = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch("http://localhost:9000/menu");
-
-        if (!response.ok) {
-          throw new Error("Menu could not be loaded");
-        }
-
-        let data = await response.json();
-        data = menuData.menu;
+        const data = menuData.menu;
 
         setTimeout(() => {
           setIsLoading(false);
         }, 1000);
 
-        console.log(data);
         setMenuItems(data);
       } catch (error: unknown) {
-        console.log(error);
         setIsLoading(false);
       }
     };
@@ -129,3 +102,49 @@ function App() {
 }
 
 export default App;
+
+// SUPABASE DATABASE
+// useEffect(() => {
+//   const getMenu = async () => {
+//     try {
+//       setIsLoading(true);
+//       const { data, error } = await supabase.from("menu").select("*");
+
+//       if (error) {
+//         throw new Error("Menu could not be loaded");
+//       }
+
+//       setMenuItems(data[0].menu);
+//       setIsLoading(false);
+//     } catch (error) {
+//       setIsLoading(false);
+//     }
+//   };
+//   getMenu();
+// }, []);
+
+// useEffect(() => {
+//   const getMenu = async () => {
+//     try {
+//       setIsLoading(true);
+//       const response = await fetch("http://localhost:9000/menu");
+
+//       if (!response.ok) {
+//         throw new Error("Menu could not be loaded");
+//       }
+
+//       let data = await response.json();
+//       data = menuData.menu;
+
+//       setTimeout(() => {
+//         setIsLoading(false);
+//       }, 1000);
+
+//       setMenuItems(data);
+//     } catch (error: unknown) {
+//       console.log(error);
+//       setIsLoading(false);
+//     }
+//   };
+//   getMenu();
+// }, []);
