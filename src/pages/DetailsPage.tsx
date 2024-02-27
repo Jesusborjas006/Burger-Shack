@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import { CartItemsType, MenuCategoryType } from "../types";
+import { MenuCategoryType } from "../data/menuData";
+import { CartItemsType } from "../types";
 import Loading from "../components/Loading";
 import DetailsImage from "../components/DetailsImage";
 import Ingredients from "../components/Ingredients";

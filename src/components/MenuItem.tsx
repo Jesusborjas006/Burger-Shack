@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { CartItemsType, MenuItemType } from "../types";
+import { CartItemsType } from "../types";
+import { MenuItemType } from "../data/menuData";
 import { useState } from "react";
 
 type MenuItemProps = {

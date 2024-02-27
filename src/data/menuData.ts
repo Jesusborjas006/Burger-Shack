@@ -3,7 +3,7 @@ export type MenuItemType = {
   name: string;
   description: string;
   price: number;
-  calories?: number;
+  calories: number;
   ingredients?: string[];
   size?: string;
   image_url: string;
@@ -230,6 +230,7 @@ const menuData: MenuDataType = {
         description:
           "Cool off with our refreshing lemonade, made with freshly squeezed lemons and a hint of sweetness.",
         price: 2.49,
+        calories: 100,
         size: "Regular",
         image_url:
           "https://www.webstaurantstore.com/images/products/large/605980/2206637.jpg",
@@ -240,6 +241,7 @@ const menuData: MenuDataType = {
         description:
           "Start your day with a kick! Our iced coffee is brewed to perfection and served over ice.",
         price: 3.99,
+        calories: 150,
         size: "Large",
         image_url:
           "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?q=80&w=3114&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

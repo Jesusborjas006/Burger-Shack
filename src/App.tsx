@@ -64,7 +64,7 @@ function App() {
         path="/details/:id"
         element={
           <DetailsPage
-            menuItems={menuItems}
+            menuItems={menuItems.menu}
             handleCartItems={handleCartItems}
           />
         }
