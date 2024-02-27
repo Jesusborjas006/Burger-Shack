@@ -15,7 +15,7 @@ const DetailsOverview = ({
     <>
       <h3 className="text-5xl font-bold">{name}</h3>
       <p className="text-gray-600">
-        ${price} | {caloriesg} cals
+        ${price} | {calories} cals
       </p>
       <p className="text-gray-600">{description}</p>
     </>
